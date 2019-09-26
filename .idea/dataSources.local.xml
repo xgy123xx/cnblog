@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - cnblog@139.199.32.236" uuid="36ba2804-3f6a-4d58-876b-09d78ba0564e">
+      <secret-storage>master_key</secret-storage>
+      <user-name>test</user-name>
+      <schema-pattern>cnblog.*</schema-pattern>
+      <default-schemas>cnblog.*</default-schemas>
+    </data-source>
+  </component>
+</project>

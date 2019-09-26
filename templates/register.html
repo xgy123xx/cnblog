@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/static/blog/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <style>
+        .error{
+            color: red;
+            margin-left: 10px;
+        }
+        #avatar-img{
+            margin-left: 40px;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-5">
+            <h1>注册</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <form>
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+
+                        <label for="id_{{ field.name }}">{{ field.label }}</label>
+                        {{ field }}<span class="error pull-right"></span>
+                    </div>
+                {% endfor %}
+                <div class="form-group">
+                    <label for="avatar">
+                        头像
+                        <img src="/static/img/default.jpg" alt="avatar" height="60" width="60" id="avatar-img">
+                    </label>
+                    <input type="file" id="avatar" style="display: none">
+                </div>
+                <input type="button" class="btn btn-default pull-left reg-btn" value="注册" >
+
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script>
+    $("#avatar").change(function () {
+        {#    1.读取文件#}
+        var file_obj = $(this)[0].files[0];
+        {#    2.读取路径#}
+        var reader = new FileReader();
+        reader.readAsDataURL(file_obj);
+        {#    3.设置图片值#}
+        reader.onload = function () {
+            $("#avatar-img").attr("src",reader.result)
+        }
+    });
+
+    $(".reg-btn").click(function () {
+        var formdata = new FormData();
+{#        formdata.append("user",$("#id_user").val());#}
+{#        formdata.append("pwd",$("#id_pwd").val());#}
+{#        formdata.append("re_pwd",$("#id_re_pwd").val());#}
+{#        formdata.append("email",$("#id_email").val());#}
+{##}
+{#        formdata.append("csrfmiddlewaretoken",$("[name='csrfmiddlewaretoken']").val());#}
+
+{#        优化代码#}
+        var request_data = $("form").serializeArray();
+        console.log(request_data);
+        $.each(request_data, function (index,data) {
+            formdata.append(data.name,data.value)
+        });
+
+        formdata.append("avatar",$("#avatar")[0].files[0]);
+        $.ajax({
+            url:"",
+            type:"post",
+            contentType:false,
+            processData:false,
+            data:formdata,
+            success: function (data) {
+{#              注册成功跳转#}
+                if(data.user){
+                    location.href = "/login/"
+                }
+                $("span.error").html("");
+                $("span.error").parent().removeClass("has-error");
+                $.each(data.msg,function (field,error_list) {
+{#                    console.log(field,error_list);#}
+                    if(field == "__all__"){
+                        $("#id_re_pwd").next().html(error_list[0]).parent().addClass("has-error");
+                    }
+
+                    $("#id_"+field).next().html(error_list[0]);
+                    $("#id_"+field).parent().addClass("has-error");
+                })
+
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

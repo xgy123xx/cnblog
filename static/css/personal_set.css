@@ -1,0 +1,72 @@
+body,html{
+    height: 100%;
+}
+#mytable tr{
+    padding: 20px;
+}
+#mytable th{
+    font-weight: 700;
+    border: 0;
+}
+#mytable td{
+    color: blue;
+    border: 0;
+}
+#wrapper{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+}
+#inner{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top:50%;
+    left:50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    border-radius: 5px;
+    background-color: white;
+}
+#inner .mymodal-header span:first-child{
+    float: left;
+    width:30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    background-color: red;
+    cursor: pointer;
+}
+#model-title{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.mymodal-body{
+    padding: 50px;
+    height:300px;
+}
+.mymodal-foot{
+    padding:10px 50px;
+    text-align: center;
+}
+.mymodal-foot button:first-child{
+    margin-right: 50px;
+}
+.mymodal-body #avatar-img{
+    float: left;
+    height:160px;
+    width: 160px;
+    margin: 20px 50px;
+}
+.mymodal-body #avatar{
+    float: left;
+    margin:100px 0;
+}

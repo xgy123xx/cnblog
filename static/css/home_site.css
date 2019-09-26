@@ -1,0 +1,30 @@
+   *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height: 80px;
+            width: 100%;
+            background-color: deepskyblue;
+        }
+        .contain p span{
+            line-height: 80px;
+            color: white;
+            font-size: 18px;
+            margin-left:20px;
+        }
+        .contain a{
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            line-height: 80px;
+            float: right;
+            margin-right:20px;
+            margin-top:10px;
+        }
+        .pub-info{
+            margin-top: 20px;
+            color: gray;
+            font-size: 14px;
+            float: right;
+        }

@@ -1,0 +1,10 @@
+#cancel{
+    margin-left: 20px;
+}
+.edit p:first-child{
+    background-color: greenyellow;
+    font-size:18px;
+}
+.edit{
+    margin-top: 30px;
+}

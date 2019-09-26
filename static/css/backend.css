@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: darkblue;
+}
+.contain p span{
+    line-height: 80px;
+    color: white;
+    font-size: 18px;
+    margin-left:20px;
+}
+.contain a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    line-height: 80px;
+    float: right;
+    margin-right:20px;
+    margin-top:10px;
+}
+.pub-info{
+    margin-top: 20px;
+    color: gray;
+    font-size: 14px;
+    float: right;
+}
+/*按钮组样式*/
+.operation-btns,.essay-classify{
+    padding: 5px 10px;
+}
+.operation-btns,.essay-classify li{
+    list-style: circle;
+    padding-top:5px;
+}
+.operation-btns a{
+
+}
+/*文章详情表样式*/
+.essay-table{
+    margin-top: 30px;
+    /*margin-left: 20px;*/
+}
+.btn-edit{
+    margin-right: 20px;
+}
+/*.email-form{*/
+    /*maring-top:40px;*/
+/*}*/

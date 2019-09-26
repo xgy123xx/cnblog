@@ -1,0 +1,34 @@
+{% extends "bases_backend.html" %}
+{% block center_block %}
+    {#        <p style="width: 100%;height: 300px;text-align: center;line-height: 300px;font-size: 30px">施工中</p>#}
+    {#    显示用户名，头像，，邮箱#}
+    <div class="col-sm-6 edit">
+        {% csrf_token %}
+        <table class="table" id="mytable">
+            <tr>
+                <th>用户名:</th>
+                <td>{{ request.user.username }}</td>
+
+            </tr>
+            <tr>
+                <th>头像:</th>
+                <td><img src="/media/{{ request.user.avatar }}" alt="avatar" height="60" width="60" id="avatar-img">
+                    {#                 <input type="file"  id="avatar" style="display: none">#}
+                </td>
+                <td><a href="#" id="modify-avatar">修改头像</a></td>
+            </tr>
+            <tr>
+                <th>邮箱:</th>
+                <td>{{ request.user.email }}</td>
+                <td><a href="#" id="modify-email">修改邮箱</a></td>
+            </tr>
+            <tr>
+                <th>密码:</th>
+                <td>******</td>
+                <td><a href="#" id="modify-pwd">修改密码</a></td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="/static/js/personal_set.js"></script>
+{% endblock %}
