@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'cnblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cnblog',
-        'USER':'test',
-        'PASSWORD':"xgy123xx",
-        'HOST':'139.199.32.236',
-        'PORT':3306
+        'NAME': '',
+        'USER':'',
+        'PASSWORD':"",
+        'HOST':'',
+        'PORT':
     }
 }
 AUTH_USER_MODEL = "blog.UserInfo"
